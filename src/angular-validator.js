@@ -76,6 +76,10 @@ angular.module('angularValidator').directive('angularValidator', ['$injector', '
                         scope.$apply(function() {
                             scope.$eval(attrs.angularValidatorSubmit);
                         });
+                    } else {
+                        scope.$apply(function() {
+                            scope.$broadcast('angular-validator:error', scopeForm);
+                        });
                     }
                 });
 
